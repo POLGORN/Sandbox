@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int main() {
-    char my_string[] = "Hello World";
-    size_t length = strlen(my_string);
-    printf("String length: %zu\n", length);
+    char my_string[] = "Hello";
+    size_t string = strlen(my_string);
+    printf("String length (%s) = %zu\n", my_string, string);
     return 0;
 }
