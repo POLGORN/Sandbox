@@ -8,3 +8,4 @@ int main() {
     printf("String length (%s) = %zu\n", my_string, string);
     return 0;
 }
+// String length (Hello) = 5
