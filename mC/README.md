@@ -1,2 +1,2 @@
-## A place for all mini-projects on *C*
+> ## A place for all mini-projects on *C*
 ![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3h6Z2g2M3Rja29sa3F0MGJ0d2t3MXJuYzJvZnBmYnpnM3pmZTJuZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/waRVKBZWi8Hx2V7lIt/giphy.gif)
