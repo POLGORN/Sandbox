@@ -19,6 +19,3 @@
 └── main.py
 
 ```
----
-## An example of what it looks like
-![2025-07-22 11-29-47](https://github.com/user-attachments/assets/f81191d8-82c4-42d1-89f7-e607c107ace4)
