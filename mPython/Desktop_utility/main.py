@@ -1,11 +1,14 @@
-import tkinter as tk
-from controller import Controller
+import tkinter as tk # Импортируем библиотеку для GUI
+from controller import Controller # Импортируем контроллер
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = Controller(root)
-    root.mainloop()
-# ________________________________________
+    # Запускается только напрямую
+    root = tk.Tk() # Создаем корневое окно
+    app = Controller(root) # Создаем экземпляр контроллера передавая ему корневое окно
+    root.mainloop() # Запускаем главный цикл обработки событий
+
+
+# _______________________________________________________________________________
 # import tkinter as tk  # Импортируем библиотеку tkinter для создания графического интерфейса
 # from controller import Controller  # Импортируем класс Controller из модуля controller
 
