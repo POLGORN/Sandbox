@@ -1,4 +1,4 @@
-# A place for all mini-projects on *C*
+# A place for all mini-projects on C
 ---
 ```C
 #include <stdio.h>
