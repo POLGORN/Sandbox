@@ -1,4 +1,4 @@
-# A place for all mini-projects on *Python*
+# A place for all mini-projects on Python
 ---
 ```python
 def infinite_hello_world():
