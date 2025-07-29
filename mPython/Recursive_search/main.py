@@ -1,3 +1,4 @@
+# From .xml to .txt all data that starts with <!> and end with <~>
 import xml.etree.ElementTree as ET
 import re
 
