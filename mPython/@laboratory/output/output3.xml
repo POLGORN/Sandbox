@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Prosoft-Systems Ltd." productName="Astra.IDE" productVersion="Astra.IDE_V1.7.2.1" creationDateTime="2025-07-24T10:35:59.4336606" />
+  <contentHeader name="AKS_v2.project" modificationDateTime="2025-07-24T08:15:04.4598718">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <CFC page-oriented="true"> <!-- НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО -->
+                <vendorElement localId="0"> <!-- localId="0" -->
+                  <position x="0" y="0" />
+                  <alternativeText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">page</xhtml>
+                  </alternativeText>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpage" handleUnknown="implementation">
+                      <page name="12AI1___TE13_H1" description="!DESCR~" marginwidth="12" width="72" height="96" index="0" xmlns="" /> <!-- 12AI1___TE13_H1 + !DESCR~ -->
+                    </data>
+                  </addData>
+                </vendorElement>
+                <inVariable localId="2"> <!-- localId="2" -->
+                  <position x="1" y="20" />
+                  <connectionPointOut>
+                    <expression />
+                  </connectionPointOut>
+                  <expression>TI13_DF</expression> <!-- TI13_DF первый -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentLeft" xmlns="" />
+                    </data>
+                  </addData>
+                </inVariable>
+                <connector localId="1" name=""> <!-- localId="1" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="2" formalParameter="TI13_DF" /> <!-- TI13_DF второй -->
+                  </connectionPointIn>
+                </connector>
+                <inVariable localId="4"> <!-- localId="4" -->
+                  <position x="1" y="19" />
+                  <connectionPointOut>
+                    <expression />
+                  </connectionPointOut>
+                  <expression>RTD</expression> <!-- RTD первый -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentLeft" xmlns="" />
+                    </data>
+                  </addData>
+                </inVariable>
+                <connector localId="3" name=""> <!-- localId="3" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="4" formalParameter="RTD" /> <!-- RTD второй -->
+                  </connectionPointIn>
+                </connector>
+                <block localId="7" executionOrderId="2" typeName="FB_DI" instanceName="TIRSAH13_H1"> <!-- localId="7" executionOrderId="2" typeName="FB_DI" instanceName="TIRSAH13_H1" -->
+                  <position x="30" y="17" />
+                  <inputVariables>
+                    <variable formalParameter="Cmd_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="0" />
+                        <connection refLocalId="3" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Ch_Input">
+                      <connectionPointIn>
+                        <relPosition x="0" y="1" />
+                        <connection refLocalId="1" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Ch_Fault">
+                      <connectionPointIn>
+                        <relPosition x="0" y="2" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Alm_En_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="3" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="DK_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="4" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Block_Ton_TP">
+                      <connectionPointIn>
+                        <relPosition x="0" y="5" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Prm_DK">
+                      <connectionPointIn>
+                        <relPosition x="0" y="6" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Inverse_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="7" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="NormalState_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="8" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="DW_Control">
+                      <connectionPointIn>
+                        <relPosition x="0" y="9" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="ESD">
+                      <connectionPointIn>
+                        <relPosition x="0" y="10" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="ESD_Time_Block">
+                      <connectionPointIn>
+                        <relPosition x="0" y="11" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="From_FB_SDI">
+                      <connectionPointIn>
+                        <relPosition x="0" y="12" />
+                      </connectionPointIn>
+                    </variable>
+                  </inputVariables>
+                  <inOutVariables />
+                  <outputVariables>
+                    <variable formalParameter="Alm">
+                      <connectionPointOut>
+                        <relPosition x="0" y="0" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="PV">
+                      <connectionPointOut>
+                        <relPosition x="0" y="1" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Ch_Fault_Out">
+                      <connectionPointOut>
+                        <relPosition x="0" y="2" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Block">
+                      <connectionPointOut>
+                        <relPosition x="0" y="3" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="NormalState">
+                      <connectionPointOut>
+                        <relPosition x="0" y="4" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Ack_Req">
+                      <connectionPointOut>
+                        <relPosition x="0" y="5" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Alm_Enable">
+                      <connectionPointOut>
+                        <relPosition x="0" y="6" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="DW_State">
+                      <connectionPointOut>
+                        <relPosition x="0" y="7" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Alm_Raw">
+                      <connectionPointOut>
+                        <relPosition x="0" y="8" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="To_FB_SDI">
+                      <connectionPointOut>
+                        <relPosition x="0" y="9" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                  </outputVariables>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="content" xmlns="" />
+                    </data>
+                    <data name="http://www.3s-software.com/plcopenxml/cfccalltype" handleUnknown="implementation">
+                      <CallType xmlns="">functionblock</CallType>
+                    </data>
+                  </addData>
+                </block>
+                <connector localId="6" name=""> <!-- localId="6" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="7" formalParameter="Alm" />
+                  </connectionPointIn>
+                </connector>
+                <outVariable localId="5" executionOrderId="1"> <!-- localId="5" executionOrderId="1" -->
+                  <position x="61" y="19" />
+                  <connectionPointIn>
+                    <relPosition x="0" y="0" />
+                    <connection refLocalId="6" />
+                  </connectionPointIn>
+                  <expression>1.2.1.1</expression> <!-- 1.2.1.1 -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentRight" xmlns="" />
+                    </data>
+                  </addData>
+                </outVariable>
+              </CFC>
+      <CFC page-oriented="true"> <!-- НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО -->
+                <vendorElement localId="0"> <!-- localId="0" -->
+                  <position x="0" y="0" />
+                  <alternativeText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">page</xhtml>
+                  </alternativeText>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpage" handleUnknown="implementation">
+                      <page name="12AI1___TE14_H2" description="!DESCR~" marginwidth="12" width="72" height="96" index="0" xmlns="" /> <!-- 12AI1___TE14_H2 + !DESCR~ -->
+                    </data>
+                  </addData>
+                </vendorElement>
+                <inVariable localId="2"> <!-- localId="2" -->
+                  <position x="1" y="20" />
+                  <connectionPointOut>
+                    <expression />
+                  </connectionPointOut>
+                  <expression>TI14_DF</expression> <!-- TI14_DF первый -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentLeft" xmlns="" />
+                    </data>
+                  </addData>
+                </inVariable>
+                <connector localId="1" name=""> <!-- localId="1" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="2" formalParameter="TI14_DF" /> <!-- TI14_DF второй -->
+                  </connectionPointIn>
+                </connector>
+                <inVariable localId="4"> <!-- localId="4" -->
+                  <position x="1" y="19" />
+                  <connectionPointOut>
+                    <expression />
+                  </connectionPointOut>
+                  <expression>RTD</expression> <!-- RTD первый -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentLeft" xmlns="" />
+                    </data>
+                  </addData>
+                </inVariable>
+                <connector localId="3" name=""> <!-- localId="3" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="4" formalParameter="RTD" /> <!-- RTD второй -->
+                  </connectionPointIn>
+                </connector>
+                <block localId="7" executionOrderId="2" typeName="FB_DI" instanceName="TIRSAH14_H2"> <!-- localId="7" executionOrderId="2" typeName="FB_DI" instanceName="TIRSAH14_H2" -->
+                  <position x="30" y="17" />
+                  <inputVariables>
+                    <variable formalParameter="Cmd_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="0" />
+                        <connection refLocalId="3" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Ch_Input">
+                      <connectionPointIn>
+                        <relPosition x="0" y="1" />
+                        <connection refLocalId="1" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Ch_Fault">
+                      <connectionPointIn>
+                        <relPosition x="0" y="2" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Alm_En_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="3" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="DK_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="4" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Block_Ton_TP">
+                      <connectionPointIn>
+                        <relPosition x="0" y="5" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Prm_DK">
+                      <connectionPointIn>
+                        <relPosition x="0" y="6" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Inverse_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="7" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="NormalState_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="8" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="DW_Control">
+                      <connectionPointIn>
+                        <relPosition x="0" y="9" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="ESD">
+                      <connectionPointIn>
+                        <relPosition x="0" y="10" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="ESD_Time_Block">
+                      <connectionPointIn>
+                        <relPosition x="0" y="11" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="From_FB_SDI">
+                      <connectionPointIn>
+                        <relPosition x="0" y="12" />
+                      </connectionPointIn>
+                    </variable>
+                  </inputVariables>
+                  <inOutVariables />
+                  <outputVariables>
+                    <variable formalParameter="Alm">
+                      <connectionPointOut>
+                        <relPosition x="0" y="0" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="PV">
+                      <connectionPointOut>
+                        <relPosition x="0" y="1" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Ch_Fault_Out">
+                      <connectionPointOut>
+                        <relPosition x="0" y="2" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Block">
+                      <connectionPointOut>
+                        <relPosition x="0" y="3" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="NormalState">
+                      <connectionPointOut>
+                        <relPosition x="0" y="4" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Ack_Req">
+                      <connectionPointOut>
+                        <relPosition x="0" y="5" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Alm_Enable">
+                      <connectionPointOut>
+                        <relPosition x="0" y="6" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="DW_State">
+                      <connectionPointOut>
+                        <relPosition x="0" y="7" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Alm_Raw">
+                      <connectionPointOut>
+                        <relPosition x="0" y="8" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="To_FB_SDI">
+                      <connectionPointOut>
+                        <relPosition x="0" y="9" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                  </outputVariables>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="content" xmlns="" />
+                    </data>
+                    <data name="http://www.3s-software.com/plcopenxml/cfccalltype" handleUnknown="implementation">
+                      <CallType xmlns="">functionblock</CallType>
+                    </data>
+                  </addData>
+                </block>
+                <connector localId="6" name=""> <!-- localId="6" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="7" formalParameter="Alm" />
+                  </connectionPointIn>
+                </connector>
+                <outVariable localId="5" executionOrderId="1"> <!-- localId="5" executionOrderId="1" -->
+                  <position x="61" y="19" />
+                  <connectionPointIn>
+                    <relPosition x="0" y="0" />
+                    <connection refLocalId="6" />
+                  </connectionPointIn>
+                  <expression>1.2.1.2</expression> <!-- 1.2.1.2 -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentRight" xmlns="" />
+                    </data>
+                  </addData>
+                </outVariable>
+              </CFC>
+      <CFC page-oriented="true"> <!-- НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО НАЧАЛО -->
+                <vendorElement localId="0"> <!-- localId="0" -->
+                  <position x="0" y="0" />
+                  <alternativeText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">page</xhtml>
+                  </alternativeText>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpage" handleUnknown="implementation">
+                      <page name="12AI1___TE15_H3" description="!DESCR~" marginwidth="12" width="72" height="96" index="0" xmlns="" /> <!-- 12AI1___TE15_H3 + !DESCR~ -->
+                    </data>
+                  </addData>
+                </vendorElement>
+                <inVariable localId="2"> <!-- localId="2" -->
+                  <position x="1" y="20" />
+                  <connectionPointOut>
+                    <expression />
+                  </connectionPointOut>
+                  <expression>TI15_DF</expression> <!-- TI15_DF первый -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentLeft" xmlns="" />
+                    </data>
+                  </addData>
+                </inVariable>
+                <connector localId="1" name=""> <!-- localId="1" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="2" formalParameter="TI15_DF" /> <!-- TI15_DF второй -->
+                  </connectionPointIn>
+                </connector>
+                <inVariable localId="4"> <!-- localId="4" -->
+                  <position x="1" y="19" />
+                  <connectionPointOut>
+                    <expression />
+                  </connectionPointOut>
+                  <expression>RTD</expression> <!-- RTD первый -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentLeft" xmlns="" />
+                    </data>
+                  </addData>
+                </inVariable>
+                <connector localId="3" name=""> <!-- localId="3" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="4" formalParameter="RTD" /> <!-- RTD второй -->
+                  </connectionPointIn>
+                </connector>
+                <block localId="7" executionOrderId="2" typeName="FB_DI" instanceName="TIRSAH15_H3"> <!-- localId="7" executionOrderId="2" typeName="FB_DI" instanceName="TIRSAH15_H3" -->
+                  <position x="30" y="17" />
+                  <inputVariables>
+                    <variable formalParameter="Cmd_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="0" />
+                        <connection refLocalId="3" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Ch_Input">
+                      <connectionPointIn>
+                        <relPosition x="0" y="1" />
+                        <connection refLocalId="1" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Ch_Fault">
+                      <connectionPointIn>
+                        <relPosition x="0" y="2" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Alm_En_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="3" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="DK_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="4" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Block_Ton_TP">
+                      <connectionPointIn>
+                        <relPosition x="0" y="5" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Prm_DK">
+                      <connectionPointIn>
+                        <relPosition x="0" y="6" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="Inverse_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="7" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="NormalState_Init">
+                      <connectionPointIn>
+                        <relPosition x="0" y="8" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="DW_Control">
+                      <connectionPointIn>
+                        <relPosition x="0" y="9" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="ESD">
+                      <connectionPointIn>
+                        <relPosition x="0" y="10" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="ESD_Time_Block">
+                      <connectionPointIn>
+                        <relPosition x="0" y="11" />
+                      </connectionPointIn>
+                    </variable>
+                    <variable formalParameter="From_FB_SDI">
+                      <connectionPointIn>
+                        <relPosition x="0" y="12" />
+                      </connectionPointIn>
+                    </variable>
+                  </inputVariables>
+                  <inOutVariables />
+                  <outputVariables>
+                    <variable formalParameter="Alm">
+                      <connectionPointOut>
+                        <relPosition x="0" y="0" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="PV">
+                      <connectionPointOut>
+                        <relPosition x="0" y="1" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Ch_Fault_Out">
+                      <connectionPointOut>
+                        <relPosition x="0" y="2" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Block">
+                      <connectionPointOut>
+                        <relPosition x="0" y="3" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="NormalState">
+                      <connectionPointOut>
+                        <relPosition x="0" y="4" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Ack_Req">
+                      <connectionPointOut>
+                        <relPosition x="0" y="5" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Alm_Enable">
+                      <connectionPointOut>
+                        <relPosition x="0" y="6" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="DW_State">
+                      <connectionPointOut>
+                        <relPosition x="0" y="7" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="Alm_Raw">
+                      <connectionPointOut>
+                        <relPosition x="0" y="8" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                    <variable formalParameter="To_FB_SDI">
+                      <connectionPointOut>
+                        <relPosition x="0" y="9" />
+                        <expression />
+                      </connectionPointOut>
+                    </variable>
+                  </outputVariables>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="content" xmlns="" />
+                    </data>
+                    <data name="http://www.3s-software.com/plcopenxml/cfccalltype" handleUnknown="implementation">
+                      <CallType xmlns="">functionblock</CallType>
+                    </data>
+                  </addData>
+                </block>
+                <connector localId="6" name=""> <!-- localId="6" name="" -->
+                  <position x="0" y="0" />
+                  <connectionPointIn>
+                    <connection refLocalId="7" formalParameter="Alm" />
+                  </connectionPointIn>
+                </connector>
+                <outVariable localId="5" executionOrderId="1"> <!-- localId="5" executionOrderId="1" -->
+                  <position x="61" y="19" />
+                  <connectionPointIn>
+                    <relPosition x="0" y="0" />
+                    <connection refLocalId="6" />
+                  </connectionPointIn>
+                  <expression>1.2.1.3</expression> <!-- 1.2.1.3 -->
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
+                      <pageInfo pageId="0" pageArea="contentRight" xmlns="" />
+                    </data>
+                  </addData>
+                </outVariable>
+              </CFC>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Folder Name="test">
+          <Folder Name="Blank">
+            <Object Name="AI__1_1" ObjectId="4da1f976-cd55-4be1-9507-1d52be8220e5" />
+          </Folder>
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
