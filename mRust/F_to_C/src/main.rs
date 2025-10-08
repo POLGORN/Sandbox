@@ -1,105 +1,19 @@
 use std::io::{self, Write};
+use std::process;
 
-enum Status {
-    Success,
-    Warning,
-    Failure,
-}
+fn select_action() -> io::Result<u8> {
+    println!("1. Фаренгейт(°F) в Цельсий(°C)\n2. Цельсий(°C) в Фаренгейт(°F)");
 
-impl Status {
-    fn color_code(&self) -> u8 {
-        match self {
-            Status::Success => 92, // зелёный
-            Status::Warning => 34, // синий
-            Status::Failure => 31, // красный
-        }
-    }
-    fn label(&self) -> &'static str {
-        match self {
-            Status::Success => "Success",
-            Status::Warning => "Warning",
-            Status::Failure => "Failure",
-        }
-    }
-    fn colored_label(&self) -> String {
-        format!("\x1B[{}m{}\x1B[0m", self.color_code(), self.label())
-    }
-}
-
-fn print_status(status: Status, msg: &str) {
-    println!("[ {} ] {}", status.colored_label(), msg);
-}
-
-fn read_trimmed_line() -> io::Result<String> {
-    let mut s = String::new();
-    io::stdin().read_line(&mut s)?;
-    Ok(s.trim().to_string())
-}
-
-fn normalize_and_parse(s: &str) -> Result<f32, &'static str> {
-    let s = s.trim();
-    if s.is_empty() {
-        return Err("empty");
-    }
-    if s.eq_ignore_ascii_case("error") || s.eq_ignore_ascii_case("fail") {
-        return Err("failure");
-    }
-    // Заменяет запятую на точку (адаптация ввода)
-    let normalized = s.replace(',', ".");
-    // Отвергаем строки с более чем одним '.' (например "1.2.3.")
-    if normalized.matches('.').count() > 1 {
-        return Err("invalid");
-    }
-    normalized.parse::<f32>().map_err(|_| "invalid")
-}
-
-fn read_choice() -> io::Result<u8> {
     loop {
-        print!("Доступные конвертации:\n1. Фаренгейт(°F) в Цельсий(°C)\n2. Цельсий(°C) в Фаренгейт(°F)\nВведите нужную(1/2): ");
+        print!("Введите вариант 1 или 2: ");
         io::stdout().flush()?;
-        let input = read_trimmed_line()?;
-        match input.as_str() {
-            "1" => return Ok(1),
-            "2" => return Ok(2),
-            "" => {
-                print_status(Status::Warning, "Пустой ввод - попробуйте ещё раз");
-                continue;
-            }
-            s if s.eq_ignore_ascii_case("error") || s.eq_ignore_ascii_case("fail") => {
-                print_status(Status::Failure, "Введено запрещённое слово");
-                continue;
-            }
-            _ => {
-                print_status(Status::Warning, "Неверный выбор - введите 1 или 2");
-                continue;
-            }
-        }
-    }
-}
 
-fn read_value(prompt: &str) -> io::Result<f32> {
-    loop {
-        print!("{}", prompt);
-        io::stdout().flush()?;
-        let input = read_trimmed_line()?;
-        match normalize_and_parse(&input) {
-            Ok(v) => return Ok(v),
-            Err("empty") => {
-                print_status(Status::Warning, "Пустой ввод - попробуйте ещё раз");
-                continue;
-            }
-            Err("failure") => {
-                print_status(Status::Failure, "Введено запрещённое ключевое слово");
-                continue;
-            }
-            Err("invalid") => {
-                print_status(Status::Warning, "Неверный формат числа - используйте цифры и разделитель '.' или ','");
-                continue;
-            }
-            Err(_) => {
-                print_status(Status::Failure, "Неизвестная ошибка");
-                continue;
-            }
+        let mut input = String::new();
+        io::stdin().read_line(&mut input)?;
+
+        match input.trim().parse::<u8>() {
+            Ok(num @ 1..=2) => return Ok(num),
+            _ => print_colored("[ ВАРИАНТ ВВЕДЕН НЕКОРРЕКТНО ]", 31),
         }
     }
 }
@@ -108,20 +22,53 @@ fn f_to_c(f: f32) -> f32 {
     (5.0 / 9.0) * (f - 32.0)
 }
 
-fn c_to_f(c:f32) -> f32 {
+fn c_to_f(c: f32) -> f32 {
     (c * 1.8) + 32.0
 }
 
-fn main() -> io::Result<()> {
-    let choice = read_choice()?;
-    if choice == 1 {
-        let f = read_value("Введите температуру в Фаренгейтах: ")?;
-        let c = f_to_c(f);
-        print_status(Status::Success, &format!("{} °F -> {:.4} °C", f, c));
-    } else {
-        let c = read_value("Введите температуру в Цельсиях: ")?;
-        let f = c_to_f(c);
-        print_status(Status::Success, &format!("{} °C -> {:.4} °F", c, f));
+fn enter_value() -> io::Result<f32> {
+    loop {
+        print!("Введите значение температуры: ");
+        io::stdout().flush()?;
+
+        let mut input = String::new();
+        io::stdin().read_line(&mut input)?;
+
+        match input.trim().parse::<f32>() {
+            Ok(value) => return Ok(value),
+            Err(_) => print_colored("[ ЗНАЧЕНИЕ ВВЕДЕНО НЕКОРРЕКТНО ]", 31),
+        }
     }
+}
+
+fn print_colored(msg: &str, color_code: u8) {
+    println!("\x1B[{}m{}\x1B[0m", color_code, msg);
+}
+
+fn main() -> io::Result<()> {
+    print_colored("\n[ Начало программы ]", 92);
+
+    ctrlc::set_handler(|| {
+        print_colored("\n[ Конец программы ]", 92);
+        process::exit(0);
+    }).expect("Не удалось установить обработчик");
+
+    let conversion_type = select_action()?;
+    let input_temperature = enter_value()?;
+
+    match conversion_type {
+        1 => {
+            let celsius = f_to_c(input_temperature);
+            println!("{:.2}°F = \x1B[92m{:.2}\x1B[0m°C", input_temperature, celsius);
+        }
+        2 => {
+            let fahrenheit = c_to_f(input_temperature);
+            println!("{:.2}°C = \x1B[92m{:.2}\x1B[0m°F", input_temperature, fahrenheit);
+        }
+        _ => unreachable!(),
+    };
+
+    print_colored("[ Конец программы ]", 92);
+
     Ok(())
 }
