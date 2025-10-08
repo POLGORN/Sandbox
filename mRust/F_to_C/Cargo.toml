@@ -1,6 +1,7 @@
 [package]
-name = "F_to_C"
+name = "archive"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+ctrlc = "3"
