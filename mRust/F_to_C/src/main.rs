@@ -11,7 +11,7 @@ impl Status {
         match self {
             Status::Success => 92, // зелёный
             Status::Warning => 34, // синий
-            Status::Failure => 31, // зелёный
+            Status::Failure => 31, // красный
         }
     }
     fn label(&self) -> &'static str {
