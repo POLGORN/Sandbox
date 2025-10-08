@@ -36,7 +36,7 @@ fn enter_value() -> io::Result<f32> {
 
         match input.trim().parse::<f32>() {
             Ok(value) => return Ok(value),
-            Err(_) => print_colored("[ ЗНАЧЕНИЕ ВВЕДЕНО НЕКОРРЕКТНО ]", 31),
+            _ => print_colored("[ ЗНАЧЕНИЕ ВВЕДЕНО НЕКОРРЕКТНО ]", 31),
         }
     }
 }
