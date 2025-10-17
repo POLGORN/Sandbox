@@ -1,3 +1,7 @@
+///////////
+// Debug //
+///////////
+
 #[derive(Debug)]
 struct Structure(i32);
 
